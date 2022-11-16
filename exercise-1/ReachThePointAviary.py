@@ -14,7 +14,7 @@ class ReachThePointAviary(BaseMultiagentAviary):
 
     def __init__(self,
                  drone_model: DroneModel = DroneModel.CF2X, ##drone model
-                 num_drones: int = 2, #number of drones
+                 num_drones: int = 3, #number of drones
                  neighbourhood_radius: float = np.inf, #ignore
                  initial_xyzs=None, #n-shaped array containing the initial XYZ position of the drones(n)
                  initial_rpys=None, #n-shaped array containing the initial orientations of the drones (in radians).

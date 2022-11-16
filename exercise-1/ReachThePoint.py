@@ -66,7 +66,7 @@ if __name__ == "__main__":
 
     #### Define and parse (optional) arguments for the script ##
     parser = argparse.ArgumentParser(description='Multi-agent reinforcement learning experiments script')
-    parser.add_argument('--num_drones', default=4, type=int, help='Number of drones (default: 2)', metavar='')
+    parser.add_argument('--num_drones', default=3, type=int, help='Number of drones (default: 2)', metavar='')
     parser.add_argument('--env', default='ReachThePointAviary', type=str, choices=['ReachThePointAviary'],
                         help='Task (default: leaderfollower)', metavar='')
     parser.add_argument('--obs', default='kin', type=ObservationType, help='Observation space (default: kin)',
@@ -125,7 +125,7 @@ if __name__ == "__main__":
     ray.shutdown()
     ray.init(ignore_reinit_error=True, local_mode=ARGS.debug)
     from ray import tune
-
+    ## new ####
     import importlib
     module = importlib.import_module('exercise-1.' + ARGS.env)
     env_class_imported = getattr(module, ARGS.env)
